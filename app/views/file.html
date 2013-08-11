@@ -1,4 +1,8 @@
-<div class="file" draggable="{{ draggable }}">
+<div class="file" draggable="{{ draggable }}" ng-style="{ top: model.y + 'px', left: model.x + 'px' }">
   <img src="/images/file.svg" alt="File" draggable="false" class="icon">
-  <div class="title" contenteditable="{{ titleEditable }}">{{ title }}</div>
+  <textarea class="title" readonly="readonly"
+    ng-keydown="disableTitleEdit($event)"
+    ng-model="model.title"
+    ng-dblclick="enableTitleEdit($event)"
+  ></textarea>
 </div>

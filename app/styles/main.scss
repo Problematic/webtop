@@ -39,7 +39,6 @@ body {
 
 .file {
   position: absolute;
-  max-width: 75px;
   text-align: center;
 
   .icon {
@@ -48,8 +47,20 @@ body {
   }
 
   .title {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin: 0;
+    padding: 0;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    width: auto;
+    border: 0;
+    background-color: #fafafa;
+    resize: none;
+    cursor: auto;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    height: auto;
+    display: block;
+    text-align: center;
   }
 }
 
