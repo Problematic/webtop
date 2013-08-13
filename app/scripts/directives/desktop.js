@@ -30,7 +30,11 @@ angular.module('webtopApp')
           desktopCtrl.flyScope().$apply(function () {
             desktopCtrl.flyScope().model.x = x;
             desktopCtrl.flyScope().model.y = y;
-            // $scope.inFlight[0].classList.toggle('in-flight');
+            desktopCtrl.flyScope().inFlight = !desktopCtrl.flyScope().inFlight;
+          });
+
+          $scope.$apply(function () {
+            $scope.inFlight = null;
           });
         });
         $element.on('dragstart', function ($event) {
