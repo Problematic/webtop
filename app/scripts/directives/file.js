@@ -23,6 +23,19 @@ angular.module('webtopApp')
         $scope.titleDisplay = function () {
           return $scope.titleEditable ? $scope.title : 'haha';
         };
+
+        $scope.classes = function () {
+          var classes = [];
+
+          if ($scope.inFlight) {
+            classes.push('in-flight');
+          }
+          if ($scope.selected) {
+            classes.push('selected');
+          }
+
+          return classes;
+        };
       }],
       link: function ($scope, $element, $attrs, ctrl) {
         var fileCtrl = ctrl[0],
@@ -35,6 +48,7 @@ angular.module('webtopApp')
         $scope.model.title = $attrs.title;
         $scope.model.x = 0;
         $scope.model.y = 0;
+        $scope.selected = false;
 
         $scope.disableTitleEdit = function ($event) {
           if ($event.keyCode === 13 || $event.keyCode === 27) {
