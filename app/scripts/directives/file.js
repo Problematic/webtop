@@ -54,7 +54,6 @@ angular.module('webtopApp')
           if ($event.keyCode === 13 || $event.keyCode === 27) {
             $event.preventDefault();
             fileCtrl.toggleTitleEditable();
-            angular.element($event.target).attr('readonly', 'readonly');
             $event.target.blur();
           }
         };
@@ -64,7 +63,6 @@ angular.module('webtopApp')
           if (!$scope.titleEditable) {
             $el = angular.element($event.target);
             fileCtrl.toggleTitleEditable();
-            $el.removeAttr('readonly');
             $el[0].setSelectionRange(0, $el.val().lastIndexOf('.'));
             $el.focus();
           }

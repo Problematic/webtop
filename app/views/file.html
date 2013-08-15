@@ -1,6 +1,6 @@
-<div class="file" ng-class="classes()" ng-click="selected = !selected" draggable="{{ draggable }}" ng-style="{ top: model.y + 'px', left: model.x + 'px' }">
+<div class="file" ng-class="classes()" ng-click="selected = true" draggable="{{ draggable }}" ng-style="{ top: model.y + 'px', left: model.x + 'px' }">
   <img src="/images/file.svg" alt="File" draggable="false" class="icon">
-  <textarea class="title" readonly="readonly"
+  <textarea class="title" ng-readonly="!titleEditable"
     ng-keydown="disableTitleEdit($event)"
     ng-model="model.title"
     ng-dblclick="enableTitleEdit($event)"
